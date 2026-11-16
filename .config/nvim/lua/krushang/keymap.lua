@@ -1,21 +1,21 @@
--- huh, migth be sortcuts 
+-- huh, migth be sortcuts
 
-vim.g.mapleader = " " 
+vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- use term in editor buddy
 vim.keymap.set("n", "<leader>t", ":sp | terminal<CR>", { noremap = true, silent = true })
 
 local map = function(mode, lhs, rhs, opt)
-    opts = opts or {}
-    opts.silent = opts.silent ~= false
-    vim.keymap.set(mode, lhs, rhs, opts)
+	opts = opts or {}
+	opts.silent = opts.silent ~= false
+	vim.keymap.set(mode, lhs, rhs, opts)
 end
 
 -- clear anoying highlights
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
--- Netrw 
+-- Netrw
 map("n", "<leader>e", "<cmd>Explore<CR>")
 map("n", "<leader>E", "<cmd>Lexplore<CR>")
 
@@ -26,25 +26,25 @@ map("n", "<leader>Y", '"+Y"')
 
 -- remove extraspace in line with save, yah this one is best
 vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = "*",
-    command = [[%s/\s+$//e]],
+	pattern = "*",
+	command = [[%s/\s+$//e]],
 })
 
 -- get to where it left
 vim.api.nvim_create_autocmd("BufReadPost", {
-    callback = function()
-        local mark = vim.api.nvim_buf_get_mark(0, '"')
-        local line_count = vim.api.nvim_buf_line_count(0)
-        if mark[1] > 0 and mark[1] <= line_count then
-            vim.api.nvim_win_set_cursor(0, mark)
-        end
-    end,
+	callback = function()
+		local mark = vim.api.nvim_buf_get_mark(0, '"')
+		local line_count = vim.api.nvim_buf_line_count(0)
+		if mark[1] > 0 and mark[1] <= line_count then
+			vim.api.nvim_win_set_cursor(0, mark)
+		end
+	end,
 })
 
--- help in vertical split 
+-- help in vertical split
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = "help",
-    command = "wincmd L",
+	pattern = "help",
+	command = "wincmd L",
 })
 
 -- no line number in terminal mode

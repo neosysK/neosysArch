@@ -10,15 +10,6 @@ return {
 			sources = {
 				-- Lua
 				null_ls.builtins.formatting.stylua,
-
-				-- Python
-				null_ls.builtins.formatting.black,
-
-				-- go
-				null_ls.builtins.formatting.gofumpt,
-
-				-- Prettier
-				null_ls.builtins.formatting.prettier,
 			},
 		})
 

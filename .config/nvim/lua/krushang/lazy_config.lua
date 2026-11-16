@@ -14,8 +14,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    spec = {
-        { import = "krushang.lazy" },
-    },
-    change_detection = { notify = false },
+	spec = {
+		{ import = "krushang.lazy" },
+	},
+	change_detection = { notify = true },
 })

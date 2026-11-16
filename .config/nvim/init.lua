@@ -1,4 +1,4 @@
--- not sure but maybe, idk ~/.config/nvim 
+-- not sure but maybe, idk ~/.config/nvim
 
 require("krushang")
 
