@@ -1,0 +1,3 @@
+#!/bin/bash 
+
+sudo pacman -S --noconfirm  waybar ttf-jetbrains-mono-nerd pavucontrol brightnessctl
